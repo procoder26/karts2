@@ -4,39 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>AppDesign Test!</title>
+  <title>Karts Start</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-<style>
-  .canvas-container {
-    position: relative;
-    width: 300px; /* Adjust width as needed */
-    height: 150px; /* Adjust height as needed */
-  }
-
-  .canvas-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0;
-    cursor: pointer;
-  }
-
-  .canvas-overlay:hover {
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust background color as needed */
-  }
-
-  .canvas-overlay button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-  }
-
-  button {
+  <style> button {
   background: linear-gradient(to bottom, #4e8ef7 0%, #2f63d4 100%);
   border: none;
   color: #fff;
@@ -49,21 +19,22 @@ button:hover {
   background: linear-gradient(to bottom, #2f63d4 0%, #4e8ef7 100%);
 }
 </style>
+</head>
 
-<div class="canvas-container">
-  <canvas id="game-canvas" width="1920" height="1080"></canvas>
-  <div class="canvas-overlay">
-    <button onclick="openSmashKarts()">Play Smash Karts</button>
-  </div>
-</div>
+  <button onclick="openSmashKarts()">Play Smash Karts!</button>
 
 <script>
-  function openSmashKarts() {
-    window.open("https://smashkarts.io/", "_blank");
+function openSmashKarts() {
+  var newWindow = window.open("about:blank", "_blank");
+  if (newWindow) {
+    newWindow.document.write('<!DOCTYPE html><html><head><title>Smash Karts</title><style>html, body { margin: 0; padding: 0; overflow: hidden; height: 100%; }</style></head><body><iframe id="iframe_game_play" class="box-padding" src="/smash-karts.embed" frameborder="0" border="0" scrolling="no" allowfullscreen="" style="width: 100%; height: 100%;"></iframe></body></html>');
+  } else {
+    alert("Popup blocked! Please allow popups for this site to play the game.");
   }
+}
 </script>
 
-<h1>TEST!</h1>
+
 
 
 </body>
