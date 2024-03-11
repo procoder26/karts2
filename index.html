@@ -1,26 +1,60 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Mega Game Start</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <style> button {
-  background: linear-gradient(to bottom, #4e8ef7 0%, #2f63d4 100%);
-  border: none;
+  <title>Open in about:blank</title>
+</head>
+<body>
+
+<button class="c-button" onclick="openInBlank()">Open in about:blank</button>
+
+<script>
+function openInBlank() {
+  var htmlContent = `<html><head><base target="_blank"></head><body><div id="fr" data="<iframe width=&quot;100%&quot; height=&quot;100%&quot; src=&quot;https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/zhit73/tallteamSK@034c728950cc6399a588e338b653e6cfd3aaad1d/sk.xml&amp;container=ig&quot; frameborder=&quot;0&quot; allowfullscreen></iframe>"><iframe width="100%" height="100%" src="https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/zhit73/tallteamSK@034c728950cc6399a588e338b653e6cfd3aaad1d/sk.xml&amp;container=ig" frameborder="0" allowfullscreen=""></iframe></div><button class="c-button" type="button" onclick="PlayTo(this)" style="display: none;">Play on Classroom 6X</button>
+<style>
+.c-button {
+  min-width: 100%;
+  font-family: fantasy;
+  appearance: auto;
+  border: 0;
+  border-color: #fff;
+  border-radius: 5px;
+  background: #274e13;
   color: #fff;
-  padding: 10px 20px;
-  border-radius: 20px;
+
+  font-size: 30px;
   cursor: pointer;
 }
 
-button:hover {
-  background: linear-gradient(to bottom, #2f63d4 0%, #4e8ef7 100%);
+.c-button:hover {
+  background: #6aa84f;
 }
-</style>
-</head>
-<iframe jsname="WMhH6e" class=" YMEQtf" frameborder="0" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation" id="16bea41bd7a4d4d8_218" name="16bea41bd7a4d4d8_218" scrolling="no" title="Custom embed" aria-label="Custom embed" src="https://www.gstatic.com/atari/embeds/83a60601c213b72fb19c1855fb0c5f26/intermediate-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.8uXxGUoumbY.O%2Fd%3D1%2Frs%3DAHpOoo96qx3mL4tzGUOa-0q0udyPRqEAoA%2Fm%3D__features__&amp;r=91905376"></iframe>
-</body>
 
+.c-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
+}
+  
+ .c-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+</style>
+
+<script>
+function PlayTo(sel){
+  var div = sel.previousSibling;
+  div.innerHTML=div.getAttribute('data');
+  sel.style.display = "none";
+}
+</script></body></html>`;
+  
+  var newWindow = window.open('about:blank');
+  newWindow.document.write(htmlContent);
+}
+</script>
+
+</body>
 </html>
