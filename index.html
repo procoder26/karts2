@@ -61,6 +61,11 @@
     </div>
 
     <script>
+        // Check if the user is already authenticated
+        if (localStorage.getItem('authenticated')) {
+            window.location.href = "content.html"; // Redirect to content page if already authenticated
+        }
+
         function checkPassword() {
             var password = document.getElementById('passwordInput').value;
             fetch('pw.txt')
