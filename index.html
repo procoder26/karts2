@@ -17,10 +17,7 @@ button:hover {
   background: linear-gradient(to bottom, #2f63d4 0%, #4e8ef7 100%);
 }
 </style>
-<body>
-<button onclick="openNewTabWithContent()">Open in New Tab</button>
-
-<script>
+  <script>
   function openNewTabWithContent() {
     var newTab = window.open('about:blank', '_blank');
     var content = document.getElementById('fr').getAttribute('data');
@@ -28,6 +25,10 @@ button:hover {
     newTab.document.close();
   }
 </script>
+<body>
+<button onclick="openNewTabWithContent()">Open Smash Karts</button>
+
+
 
 <div id="fr" data="<iframe width=&quot;100%&quot; height=&quot;100%&quot; src=&quot;https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/zhit73/tallteamSK@034c728950cc6399a588e338b653e6cfd3aaad1d/sk.xml&amp;container=ig&quot; frameborder=&quot;0&quot; allowfullscreen></iframe>">
   <iframe width="100%" height="100%" src="https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/zhit73/tallteamSK@034c728950cc6399a588e338b653e6cfd3aaad1d/sk.xml&amp;container=ig" frameborder="0" allowfullscreen=""></iframe>
