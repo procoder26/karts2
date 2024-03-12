@@ -54,22 +54,11 @@
 <body>
     <div class="container">
         <h2>Enter Password</h2>
-        <form id="passwordForm">
-            <input type="password" id="passwordInput" placeholder="Enter password">
-            <button type="button" onclick="checkPassword()">Submit</button>
+        <form id="passwordForm" action="authenticate.php" method="post">
+            <input type="password" name="password" placeholder="Enter password">
+            <button type="submit">Submit</button>
         </form>
     </div>
-
-    <script>
-        function checkPassword() {
-            var password = document.getElementById('passwordInput').value;
-            if (password === "kartkart") {
-                window.location.href = "content.html";
-            } else {
-                alert("Incorrect password. Please try again.");
-            }
-        }
-    </script>
 </body>
 
 </html>
