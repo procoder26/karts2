@@ -3,7 +3,7 @@
 
 <head>
     <base target="_blank">
-    <title>Karts Full</title>
+    <title>Karts Full - Updated</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -55,16 +55,16 @@
     </div>
 
     <script>
+        // Check if the user is authenticated, if not, redirect to index.html
+        if (!localStorage.getItem('authenticated')) {
+            window.location.href = "index.html";
+        }
+
         function openNewTabWithContent() {
             var newTab = window.open('about:blank', '_blank');
             var content = document.getElementById('fr').getAttribute('data');
             newTab.document.write(content);
             newTab.document.close();
-        }
-
-        // Check if the user has authenticated, if not, redirect to the password page
-        if (!localStorage.getItem('authenticated')) {
-            window.location.href = "index.html";
         }
     </script>
 </body>
