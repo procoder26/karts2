@@ -54,11 +54,28 @@
 <body>
     <div class="container">
         <h2>Enter Password</h2>
-        <form id="passwordForm" action="authenticate.php" method="post">
-            <input type="password" name="password" placeholder="Enter password">
-            <button type="submit">Submit</button>
+        <form id="passwordForm">
+            <input type="password" id="passwordInput" placeholder="Enter password">
+            <button type="button" onclick="checkPassword()">Submit</button>
         </form>
     </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById('passwordInput').value;
+            fetch('pw.txt')
+                .then(response => response.text())
+                .then(data => {
+                    var passwords = data.split('\n');
+                    if (passwords.includes(password)) {
+                        window.location.href = "content.html";
+                    } else {
+                        alert("Incorrect password. Please try again.");
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
 </body>
 
 </html>
